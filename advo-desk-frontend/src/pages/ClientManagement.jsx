@@ -15,8 +15,10 @@ const ClientManagement = () => {
   const [fieldErrors, setFieldErrors] = useState({});
 
   useEffect(() => {
-    loadClients();
-  }, []);
+    if (user) {
+      loadClients();
+    }
+  }, [user]);
 
   const loadClients = async () => {
     try {

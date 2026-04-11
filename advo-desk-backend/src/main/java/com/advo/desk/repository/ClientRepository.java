@@ -31,4 +31,6 @@ public interface ClientRepository extends JpaRepository<Client, Long> {
      * Find clients created by specific user (advocate)
      */
     List<Client> findByCreatedById(Long userId);
+
+    long countByCreatedById(Long userId);
 }

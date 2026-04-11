@@ -28,16 +28,40 @@ public class DashboardService {
     /**
      * Get dashboard statistics
      */
-    public DashboardStatsDTO getDashboardStats() {
+    public DashboardStatsDTO getDashboardStats(Long advocateId) {
+
         DashboardStatsDTO stats = new DashboardStatsDTO();
 
-        stats.setTotalCases(caseRepository.count());
-        stats.setOpenCases(caseRepository.countByCaseStatus(Case.CaseStatus.OPEN));
-        stats.setClosedCases(caseRepository.countByCaseStatus(Case.CaseStatus.CLOSED));
-        stats.setWonCases(caseRepository.countByCaseStatus(Case.CaseStatus.WON));
-        stats.setLostCases(caseRepository.countByCaseStatus(Case.CaseStatus.LOST));
-        stats.setUpcomingHearings(hearingRepository.countUpcomingHearings(LocalDateTime.now()));
-        stats.setTotalClients(clientRepository.count());
+        if (advocateId != null) {
+            // Advocate → only their data
+
+            stats.setTotalCases(caseRepository.countByCreatedById(advocateId));
+            stats.setOpenCases(caseRepository.countByCreatedByIdAndCaseStatus(advocateId, Case.CaseStatus.OPEN));
+            stats.setClosedCases(caseRepository.countByCreatedByIdAndCaseStatus(advocateId, Case.CaseStatus.CLOSED));
+            stats.setWonCases(caseRepository.countByCreatedByIdAndCaseStatus(advocateId, Case.CaseStatus.WON));
+            stats.setLostCases(caseRepository.countByCreatedByIdAndCaseStatus(advocateId, Case.CaseStatus.LOST));
+
+            stats.setUpcomingHearings(
+                hearingRepository.countUpcomingHearingsByHearingDateAfter(LocalDateTime.now())
+            );
+
+            stats.setTotalClients(clientRepository.countByCreatedById(advocateId));
+
+        } else {
+            // 🟢 Admin → all data
+
+            stats.setTotalCases(caseRepository.count());
+            stats.setOpenCases(caseRepository.countByCaseStatus(Case.CaseStatus.OPEN));
+            stats.setClosedCases(caseRepository.countByCaseStatus(Case.CaseStatus.CLOSED));
+            stats.setWonCases(caseRepository.countByCaseStatus(Case.CaseStatus.WON));
+            stats.setLostCases(caseRepository.countByCaseStatus(Case.CaseStatus.LOST));
+
+            stats.setUpcomingHearings(
+                hearingRepository.countUpcomingHearings(LocalDateTime.now())
+            );
+
+            stats.setTotalClients(clientRepository.count());
+        }
 
         return stats;
     }

@@ -7,6 +7,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
@@ -24,9 +25,8 @@ public class DashboardController {
      * Get dashboard statistics
      * GET /api/dashboard/stats
      */
-    @GetMapping("/stats")
-    public ResponseEntity<DashboardStatsDTO> getDashboardStats() {
-        DashboardStatsDTO stats = dashboardService.getDashboardStats();
-        return ResponseEntity.ok(stats);
+    @GetMapping
+    public DashboardStatsDTO getStats(@RequestParam(required = false) Long advocateId) {
+        return dashboardService.getDashboardStats(advocateId);
     }
 }

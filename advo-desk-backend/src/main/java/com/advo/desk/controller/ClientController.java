@@ -30,19 +30,23 @@ public class ClientController {
      * Admin: sees ALL clients
      * Advocate: sees only THEIR clients
      */
-    @GetMapping
-    @PreAuthorize("hasAnyRole('ADMIN', 'ADVOCATE')")
-    public ResponseEntity<List<ClientDTO>> getAllClients(@RequestParam(required = false) Long advocateId) {
-        List<ClientDTO> clients;
-        if (advocateId != null) {
-            // Filter by advocate ID (for advocates to see only their clients)
-            clients = clientService.getClientsByAdvocate(advocateId);
-        } else {
-            // Admin sees all clients
-            clients = clientService.getAllClients();
-        }
-        return ResponseEntity.ok(clients);
+@GetMapping
+@PreAuthorize("hasAnyRole('ADMIN', 'ADVOCATE')")
+public ResponseEntity<List<ClientDTO>> getAllClients(@RequestParam(required = false) Long advocateId) {
+
+    List<ClientDTO> clients;
+
+    // 🟢 If advocateId is provided → show only that advocate's clients
+    if (advocateId != null) {
+        clients = clientService.getClientsByAdvocate(advocateId);
+    } 
+    // 🟢 If NOT provided → show all clients (for admin)
+    else {
+        clients = clientService.getAllClients();
     }
+
+    return ResponseEntity.ok(clients);
+}
 
     /**
      * Get client by ID

@@ -2,25 +2,34 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import dashboardService from '../services/dashboardService';
+import { useAuth } from '../context/AuthContext';
 
 const AdvocateDashboard = () => {
+  const { user } = useAuth();
   const [stats, setStats] = useState(null);
   const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
+useEffect(() => {
+  if (user) {
     loadStats();
-  }, []);
+  }
+}, [user]);
 
-  const loadStats = async () => {
-    try {
-      const response = await dashboardService.getDashboardStats();
-      setStats(response.data);
-    } catch (error) {
-      console.error('Error loading stats:', error);
-    } finally {
-      setLoading(false);
-    }
-  };
+const loadStats = async () => {
+  try {
+    // Get logged-in advocate ID
+    const advocateId = user?.role === 'ADVOCATE' ? user.id : null;
+
+    // Send advocateId to backend
+    const response = await dashboardService.getDashboardStats(advocateId);
+
+    setStats(response.data);
+  } catch (error) {
+    console.error('Error loading stats:', error);
+  } finally {
+    setLoading(false);
+  }
+};
 
   if (loading) {
     return (

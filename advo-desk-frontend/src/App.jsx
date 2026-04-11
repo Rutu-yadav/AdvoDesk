@@ -21,6 +21,7 @@ import AdvocateApprovals from "./pages/AdvocateApprovals";
 import PendingVerifications from "./pages/admin/PendingVerifications";
 import { ROLES } from "./utils/constants";
 
+
 function App() {
   return (
     <AuthProvider>

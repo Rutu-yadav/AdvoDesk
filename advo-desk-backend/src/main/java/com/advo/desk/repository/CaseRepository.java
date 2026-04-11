@@ -42,4 +42,8 @@ public interface CaseRepository extends JpaRepository<Case, Long> {
      * Count cases by status
      */
     long countByCaseStatus(Case.CaseStatus status);
+
+    long countByCreatedById(Long userId);
+
+    long countByCreatedByIdAndCaseStatus(Long userId, Case.CaseStatus status);
 }

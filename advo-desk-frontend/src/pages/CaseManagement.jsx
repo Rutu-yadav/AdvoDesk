@@ -19,9 +19,11 @@ const CaseManagement = () => {
   const [fieldErrors, setFieldErrors] = useState({});
 
   useEffect(() => {
+  if (user) {
     loadCases();
     loadClients();
-  }, []);
+  }
+}, [user]);
 
   const loadCases = async () => {
     try {
@@ -36,13 +38,19 @@ const CaseManagement = () => {
   };
 
   const loadClients = async () => {
-    try {
-      const response = await clientService.getAllClients();
-      setClients(response.data);
-    } catch (error) {
-      console.error('Error loading clients:', error);
-    }
-  };
+  try {
+    // Get advocate ID from logged-in user
+    const advocateId = user?.role === 'ADVOCATE' ? user.id : null;
+
+    // Send advocateId to backend
+    const response = await clientService.getAllClients(advocateId);
+
+    // Set only filtered clients
+    setClients(response.data);
+  } catch (error) {
+    console.error('Error loading clients:', error);
+  }
+};
 
   const handleSubmit = async (e) => {
     e.preventDefault();

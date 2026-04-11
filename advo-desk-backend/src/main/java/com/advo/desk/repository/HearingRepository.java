@@ -39,4 +39,6 @@ public interface HearingRepository extends JpaRepository<Hearing, Long> {
      */
     @Query("SELECT COUNT(h) FROM Hearing h WHERE h.hearingDate > :currentDate AND h.status = 'SCHEDULED'")
     long countUpcomingHearings(LocalDateTime currentDate);
+
+    long countUpcomingHearingsByHearingDateAfter(LocalDateTime now);
 }
