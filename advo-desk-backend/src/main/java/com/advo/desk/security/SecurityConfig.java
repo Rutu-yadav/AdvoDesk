@@ -91,6 +91,13 @@ public class SecurityConfig {
                         // Public APIs
                         .requestMatchers("/api/auth/**").permitAll()
 
+                        // Client APIs
+                        .requestMatchers("/api/advocates/**").permitAll()
+
+                        // Request APIs
+                        .requestMatchers("/api/requests/**").permitAll()
+
+
                         // Admin APIs
                         .requestMatchers("/api/admin/**").hasRole("ADMIN")
 

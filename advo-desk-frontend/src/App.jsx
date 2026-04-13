@@ -6,6 +6,7 @@ import {
   Route,
   Navigate,
 } from "react-router-dom";
+import SelectAdvocate from "./pages/Client/SelectAdvocate";
 import { AuthProvider } from "./context/AuthContext";
 import ProtectedRoute from "./components/ProtectedRoute";
 import Landing from "./pages/Landing";
@@ -79,6 +80,16 @@ function App() {
               </ProtectedRoute>
             }
           />
+
+          {/* Advocate Selection Route for Clients */}
+          <Route
+            path="/client/select-advocate"
+            element={
+              <ProtectedRoute allowedRoles={[ROLES.CLIENT]}>
+                <SelectAdvocate />
+    </ProtectedRoute>
+  }
+/>
 
           {/* Protected Routes - Admin & Advocate */}
           <Route

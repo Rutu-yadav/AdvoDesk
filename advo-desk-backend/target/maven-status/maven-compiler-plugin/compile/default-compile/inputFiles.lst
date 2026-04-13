@@ -8,6 +8,7 @@ C:\Users\Rushikesh Yadav\OneDrive\Desktop\AdvoDesk\advo-desk-backend\src\main\ja
 C:\Users\Rushikesh Yadav\OneDrive\Desktop\AdvoDesk\advo-desk-backend\src\main\java\com\advo\desk\entity\Hearing.java
 C:\Users\Rushikesh Yadav\OneDrive\Desktop\AdvoDesk\advo-desk-backend\src\main\java\com\advo\desk\dto\HearingDTO.java
 C:\Users\Rushikesh Yadav\OneDrive\Desktop\AdvoDesk\advo-desk-backend\src\main\java\com\advo\desk\controller\DashboardController.java
+C:\Users\Rushikesh Yadav\OneDrive\Desktop\AdvoDesk\advo-desk-backend\src\main\java\com\advo\desk\repository\ClientRequestRepository.java
 C:\Users\Rushikesh Yadav\OneDrive\Desktop\AdvoDesk\advo-desk-backend\src\main\java\com\advo\desk\repository\ClientRepository.java
 C:\Users\Rushikesh Yadav\OneDrive\Desktop\AdvoDesk\advo-desk-backend\src\main\java\com\advo\desk\security\JwtUtil.java
 C:\Users\Rushikesh Yadav\OneDrive\Desktop\AdvoDesk\advo-desk-backend\src\main\java\com\advo\desk\validator\EnrollmentValidator.java
@@ -35,6 +36,7 @@ C:\Users\Rushikesh Yadav\OneDrive\Desktop\AdvoDesk\advo-desk-backend\src\main\ja
 C:\Users\Rushikesh Yadav\OneDrive\Desktop\AdvoDesk\advo-desk-backend\src\main\java\com\advo\desk\entity\User.java
 C:\Users\Rushikesh Yadav\OneDrive\Desktop\AdvoDesk\advo-desk-backend\src\main\java\com\advo\desk\service\UserService.java
 C:\Users\Rushikesh Yadav\OneDrive\Desktop\AdvoDesk\advo-desk-backend\src\main\java\com\advo\desk\util\PasswordHashGenerator.java
+C:\Users\Rushikesh Yadav\OneDrive\Desktop\AdvoDesk\advo-desk-backend\src\main\java\com\advo\desk\controller\ClientRequestController.java
 C:\Users\Rushikesh Yadav\OneDrive\Desktop\AdvoDesk\advo-desk-backend\src\main\java\com\advo\desk\model\VerificationStatus.java
 C:\Users\Rushikesh Yadav\OneDrive\Desktop\AdvoDesk\advo-desk-backend\src\main\java\com\advo\desk\dto\DocumentDTO.java
 C:\Users\Rushikesh Yadav\OneDrive\Desktop\AdvoDesk\advo-desk-backend\src\main\java\com\advo\desk\dto\RegisterRequest.java
@@ -43,8 +45,10 @@ C:\Users\Rushikesh Yadav\OneDrive\Desktop\AdvoDesk\advo-desk-backend\src\main\ja
 C:\Users\Rushikesh Yadav\OneDrive\Desktop\AdvoDesk\advo-desk-backend\src\main\java\com\advo\desk\service\HearingService.java
 C:\Users\Rushikesh Yadav\OneDrive\Desktop\AdvoDesk\advo-desk-backend\src\main\java\com\advo\desk\controller\AuthController.java
 C:\Users\Rushikesh Yadav\OneDrive\Desktop\AdvoDesk\advo-desk-backend\src\main\java\com\advo\desk\dto\CaseDTO.java
+C:\Users\Rushikesh Yadav\OneDrive\Desktop\AdvoDesk\advo-desk-backend\src\main\java\com\advo\desk\controller\AdvocateController.java
 C:\Users\Rushikesh Yadav\OneDrive\Desktop\AdvoDesk\advo-desk-backend\src\main\java\com\advo\desk\controller\UserController.java
 C:\Users\Rushikesh Yadav\OneDrive\Desktop\AdvoDesk\advo-desk-backend\src\main\java\com\advo\desk\entity\Document.java
+C:\Users\Rushikesh Yadav\OneDrive\Desktop\AdvoDesk\advo-desk-backend\src\main\java\com\advo\desk\entity\ClientRequest.java
 C:\Users\Rushikesh Yadav\OneDrive\Desktop\AdvoDesk\advo-desk-backend\src\main\java\com\advo\desk\repository\AdvocateRepository.java
 C:\Users\Rushikesh Yadav\OneDrive\Desktop\AdvoDesk\advo-desk-backend\src\main\java\com\advo\desk\repository\CaseRepository.java
 C:\Users\Rushikesh Yadav\OneDrive\Desktop\AdvoDesk\advo-desk-backend\src\main\java\com\advo\desk\exception\ResourceNotFoundException.java
