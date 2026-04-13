@@ -20,6 +20,7 @@ import DocumentManagement from "./pages/DocumentManagement";
 import AdvocateApprovals from "./pages/AdvocateApprovals";
 import PendingVerifications from "./pages/admin/PendingVerifications";
 import { ROLES } from "./utils/constants";
+import ClientRegistration from "./pages/ClientRegistration";
 
 
 function App() {
@@ -31,6 +32,7 @@ function App() {
           <Route path="/" element={<Landing />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
+          <Route path="/register-client" element={<ClientRegistration />} />
 
           {/* Protected Routes - Admin */}
           <Route
