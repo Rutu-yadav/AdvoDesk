@@ -1,53 +1,53 @@
-C:\Users\Rushikesh Yadav\OneDrive\Desktop\AdvoDesk\advo-desk-backend\src\main\java\com\advo\desk\controller\VerificationController.java
-C:\Users\Rushikesh Yadav\OneDrive\Desktop\AdvoDesk\advo-desk-backend\src\main\java\com\advo\desk\service\AuthService.java
-C:\Users\Rushikesh Yadav\OneDrive\Desktop\AdvoDesk\advo-desk-backend\src\main\java\com\advo\desk\entity\Admin.java
-C:\Users\Rushikesh Yadav\OneDrive\Desktop\AdvoDesk\advo-desk-backend\src\main\java\com\advo\desk\exception\UnauthorizedException.java
-C:\Users\Rushikesh Yadav\OneDrive\Desktop\AdvoDesk\advo-desk-backend\src\main\java\com\advo\desk\repository\UserRepository.java
-C:\Users\Rushikesh Yadav\OneDrive\Desktop\AdvoDesk\advo-desk-backend\src\main\java\com\advo\desk\dto\DashboardStatsDTO.java
-C:\Users\Rushikesh Yadav\OneDrive\Desktop\AdvoDesk\advo-desk-backend\src\main\java\com\advo\desk\entity\Advocate.java
-C:\Users\Rushikesh Yadav\OneDrive\Desktop\AdvoDesk\advo-desk-backend\src\main\java\com\advo\desk\entity\Hearing.java
-C:\Users\Rushikesh Yadav\OneDrive\Desktop\AdvoDesk\advo-desk-backend\src\main\java\com\advo\desk\dto\HearingDTO.java
-C:\Users\Rushikesh Yadav\OneDrive\Desktop\AdvoDesk\advo-desk-backend\src\main\java\com\advo\desk\controller\DashboardController.java
-C:\Users\Rushikesh Yadav\OneDrive\Desktop\AdvoDesk\advo-desk-backend\src\main\java\com\advo\desk\repository\ClientRepository.java
-C:\Users\Rushikesh Yadav\OneDrive\Desktop\AdvoDesk\advo-desk-backend\src\main\java\com\advo\desk\security\JwtUtil.java
-C:\Users\Rushikesh Yadav\OneDrive\Desktop\AdvoDesk\advo-desk-backend\src\main\java\com\advo\desk\validator\EnrollmentValidator.java
-C:\Users\Rushikesh Yadav\OneDrive\Desktop\AdvoDesk\advo-desk-backend\src\main\java\com\advo\desk\service\CaseService.java
-C:\Users\Rushikesh Yadav\OneDrive\Desktop\AdvoDesk\advo-desk-backend\src\main\java\com\advo\desk\security\UserDetailsServiceImpl.java
-C:\Users\Rushikesh Yadav\OneDrive\Desktop\AdvoDesk\advo-desk-backend\src\main\java\com\advo\desk\repository\HearingRepository.java
-C:\Users\Rushikesh Yadav\OneDrive\Desktop\AdvoDesk\advo-desk-backend\src\main\java\com\advo\desk\service\AdminService.java
-C:\Users\Rushikesh Yadav\OneDrive\Desktop\AdvoDesk\advo-desk-backend\src\main\java\com\advo\desk\service\FileUploadService.java
-C:\Users\Rushikesh Yadav\OneDrive\Desktop\AdvoDesk\advo-desk-backend\src\main\java\com\advo\desk\AdvoDeskApplication.java
-C:\Users\Rushikesh Yadav\OneDrive\Desktop\AdvoDesk\advo-desk-backend\src\main\java\com\advo\desk\service\CustomUserDetailsService.java
-C:\Users\Rushikesh Yadav\OneDrive\Desktop\AdvoDesk\advo-desk-backend\src\main\java\com\advo\desk\service\DashboardService.java
-C:\Users\Rushikesh Yadav\OneDrive\Desktop\AdvoDesk\advo-desk-backend\src\main\java\com\advo\desk\controller\AdminController.java
-C:\Users\Rushikesh Yadav\OneDrive\Desktop\AdvoDesk\advo-desk-backend\src\main\java\com\advo\desk\controller\CaseController.java
-C:\Users\Rushikesh Yadav\OneDrive\Desktop\AdvoDesk\advo-desk-backend\src\main\java\com\advo\desk\entity\Case.java
-C:\Users\Rushikesh Yadav\OneDrive\Desktop\AdvoDesk\advo-desk-backend\src\main\java\com\advo\desk\entity\Client.java
-C:\Users\Rushikesh Yadav\OneDrive\Desktop\AdvoDesk\advo-desk-backend\src\main\java\com\advo\desk\security\SecurityConfig.java
-C:\Users\Rushikesh Yadav\OneDrive\Desktop\AdvoDesk\advo-desk-backend\src\main\java\com\advo\desk\dto\LoginRequest.java
-C:\Users\Rushikesh Yadav\OneDrive\Desktop\AdvoDesk\advo-desk-backend\src\main\java\com\advo\desk\dto\ApprovalRequest.java
-C:\Users\Rushikesh Yadav\OneDrive\Desktop\AdvoDesk\advo-desk-backend\src\main\java\com\advo\desk\controller\DocumentController.java
-C:\Users\Rushikesh Yadav\OneDrive\Desktop\AdvoDesk\advo-desk-backend\src\main\java\com\advo\desk\service\ClientService.java
-C:\Users\Rushikesh Yadav\OneDrive\Desktop\AdvoDesk\advo-desk-backend\src\main\java\com\advo\desk\repository\DocumentRepository.java
-C:\Users\Rushikesh Yadav\OneDrive\Desktop\AdvoDesk\advo-desk-backend\src\main\java\com\advo\desk\controller\HearingController.java
-C:\Users\Rushikesh Yadav\OneDrive\Desktop\AdvoDesk\advo-desk-backend\src\main\java\com\advo\desk\security\JwtAuthenticationFilter.java
-C:\Users\Rushikesh Yadav\OneDrive\Desktop\AdvoDesk\advo-desk-backend\src\main\java\com\advo\desk\dto\ClientDTO.java
-C:\Users\Rushikesh Yadav\OneDrive\Desktop\AdvoDesk\advo-desk-backend\src\main\java\com\advo\desk\entity\User.java
-C:\Users\Rushikesh Yadav\OneDrive\Desktop\AdvoDesk\advo-desk-backend\src\main\java\com\advo\desk\service\UserService.java
-C:\Users\Rushikesh Yadav\OneDrive\Desktop\AdvoDesk\advo-desk-backend\src\main\java\com\advo\desk\util\PasswordHashGenerator.java
-C:\Users\Rushikesh Yadav\OneDrive\Desktop\AdvoDesk\advo-desk-backend\src\main\java\com\advo\desk\model\VerificationStatus.java
-C:\Users\Rushikesh Yadav\OneDrive\Desktop\AdvoDesk\advo-desk-backend\src\main\java\com\advo\desk\dto\DocumentDTO.java
-C:\Users\Rushikesh Yadav\OneDrive\Desktop\AdvoDesk\advo-desk-backend\src\main\java\com\advo\desk\dto\RegisterRequest.java
-C:\Users\Rushikesh Yadav\OneDrive\Desktop\AdvoDesk\advo-desk-backend\src\main\java\com\advo\desk\exception\GlobalExceptionHandler.java
-C:\Users\Rushikesh Yadav\OneDrive\Desktop\AdvoDesk\advo-desk-backend\src\main\java\com\advo\desk\repository\AdminRepository.java
-C:\Users\Rushikesh Yadav\OneDrive\Desktop\AdvoDesk\advo-desk-backend\src\main\java\com\advo\desk\service\HearingService.java
-C:\Users\Rushikesh Yadav\OneDrive\Desktop\AdvoDesk\advo-desk-backend\src\main\java\com\advo\desk\controller\AuthController.java
-C:\Users\Rushikesh Yadav\OneDrive\Desktop\AdvoDesk\advo-desk-backend\src\main\java\com\advo\desk\dto\CaseDTO.java
-C:\Users\Rushikesh Yadav\OneDrive\Desktop\AdvoDesk\advo-desk-backend\src\main\java\com\advo\desk\controller\UserController.java
-C:\Users\Rushikesh Yadav\OneDrive\Desktop\AdvoDesk\advo-desk-backend\src\main\java\com\advo\desk\entity\Document.java
-C:\Users\Rushikesh Yadav\OneDrive\Desktop\AdvoDesk\advo-desk-backend\src\main\java\com\advo\desk\repository\AdvocateRepository.java
-C:\Users\Rushikesh Yadav\OneDrive\Desktop\AdvoDesk\advo-desk-backend\src\main\java\com\advo\desk\repository\CaseRepository.java
-C:\Users\Rushikesh Yadav\OneDrive\Desktop\AdvoDesk\advo-desk-backend\src\main\java\com\advo\desk\exception\ResourceNotFoundException.java
-C:\Users\Rushikesh Yadav\OneDrive\Desktop\AdvoDesk\advo-desk-backend\src\main\java\com\advo\desk\dto\LoginResponse.java
-C:\Users\Rushikesh Yadav\OneDrive\Desktop\AdvoDesk\advo-desk-backend\src\main\java\com\advo\desk\controller\ClientController.java
-C:\Users\Rushikesh Yadav\OneDrive\Desktop\AdvoDesk\advo-desk-backend\src\main\java\com\advo\desk\service\DocumentService.java
+D:\AdvoDesk\advo-desk-backend\src\main\java\com\advo\desk\entity\Document.java
+D:\AdvoDesk\advo-desk-backend\src\main\java\com\advo\desk\entity\User.java
+D:\AdvoDesk\advo-desk-backend\src\main\java\com\advo\desk\service\AuthService.java
+D:\AdvoDesk\advo-desk-backend\src\main\java\com\advo\desk\AdvoDeskApplication.java
+D:\AdvoDesk\advo-desk-backend\src\main\java\com\advo\desk\entity\Case.java
+D:\AdvoDesk\advo-desk-backend\src\main\java\com\advo\desk\entity\Advocate.java
+D:\AdvoDesk\advo-desk-backend\src\main\java\com\advo\desk\entity\Client.java
+D:\AdvoDesk\advo-desk-backend\src\main\java\com\advo\desk\repository\DocumentRepository.java
+D:\AdvoDesk\advo-desk-backend\src\main\java\com\advo\desk\security\SecurityConfig.java
+D:\AdvoDesk\advo-desk-backend\src\main\java\com\advo\desk\service\CaseService.java
+D:\AdvoDesk\advo-desk-backend\src\main\java\com\advo\desk\service\FileUploadService.java
+D:\AdvoDesk\advo-desk-backend\src\main\java\com\advo\desk\controller\DocumentController.java
+D:\AdvoDesk\advo-desk-backend\src\main\java\com\advo\desk\repository\UserRepository.java
+D:\AdvoDesk\advo-desk-backend\src\main\java\com\advo\desk\controller\AdminController.java
+D:\AdvoDesk\advo-desk-backend\src\main\java\com\advo\desk\repository\ClientRepository.java
+D:\AdvoDesk\advo-desk-backend\src\main\java\com\advo\desk\controller\UserController.java
+D:\AdvoDesk\advo-desk-backend\src\main\java\com\advo\desk\security\JwtAuthenticationFilter.java
+D:\AdvoDesk\advo-desk-backend\src\main\java\com\advo\desk\controller\HearingController.java
+D:\AdvoDesk\advo-desk-backend\src\main\java\com\advo\desk\repository\AdminRepository.java
+D:\AdvoDesk\advo-desk-backend\src\main\java\com\advo\desk\service\UserService.java
+D:\AdvoDesk\advo-desk-backend\src\main\java\com\advo\desk\controller\CaseController.java
+D:\AdvoDesk\advo-desk-backend\src\main\java\com\advo\desk\service\CustomUserDetailsService.java
+D:\AdvoDesk\advo-desk-backend\src\main\java\com\advo\desk\controller\DashboardController.java
+D:\AdvoDesk\advo-desk-backend\src\main\java\com\advo\desk\repository\AdvocateRepository.java
+D:\AdvoDesk\advo-desk-backend\src\main\java\com\advo\desk\controller\AuthController.java
+D:\AdvoDesk\advo-desk-backend\src\main\java\com\advo\desk\model\VerificationStatus.java
+D:\AdvoDesk\advo-desk-backend\src\main\java\com\advo\desk\repository\CaseRepository.java
+D:\AdvoDesk\advo-desk-backend\src\main\java\com\advo\desk\dto\LoginRequest.java
+D:\AdvoDesk\advo-desk-backend\src\main\java\com\advo\desk\dto\RegisterRequest.java
+D:\AdvoDesk\advo-desk-backend\src\main\java\com\advo\desk\dto\DashboardStatsDTO.java
+D:\AdvoDesk\advo-desk-backend\src\main\java\com\advo\desk\entity\Admin.java
+D:\AdvoDesk\advo-desk-backend\src\main\java\com\advo\desk\dto\ApprovalRequest.java
+D:\AdvoDesk\advo-desk-backend\src\main\java\com\advo\desk\controller\ClientController.java
+D:\AdvoDesk\advo-desk-backend\src\main\java\com\advo\desk\dto\DocumentDTO.java
+D:\AdvoDesk\advo-desk-backend\src\main\java\com\advo\desk\controller\VerificationController.java
+D:\AdvoDesk\advo-desk-backend\src\main\java\com\advo\desk\security\JwtUtil.java
+D:\AdvoDesk\advo-desk-backend\src\main\java\com\advo\desk\dto\CaseDTO.java
+D:\AdvoDesk\advo-desk-backend\src\main\java\com\advo\desk\security\UserDetailsServiceImpl.java
+D:\AdvoDesk\advo-desk-backend\src\main\java\com\advo\desk\repository\HearingRepository.java
+D:\AdvoDesk\advo-desk-backend\src\main\java\com\advo\desk\service\DocumentService.java
+D:\AdvoDesk\advo-desk-backend\src\main\java\com\advo\desk\exception\ResourceNotFoundException.java
+D:\AdvoDesk\advo-desk-backend\src\main\java\com\advo\desk\dto\HearingDTO.java
+D:\AdvoDesk\advo-desk-backend\src\main\java\com\advo\desk\exception\UnauthorizedException.java
+D:\AdvoDesk\advo-desk-backend\src\main\java\com\advo\desk\service\DashboardService.java
+D:\AdvoDesk\advo-desk-backend\src\main\java\com\advo\desk\service\AdminService.java
+D:\AdvoDesk\advo-desk-backend\src\main\java\com\advo\desk\dto\LoginResponse.java
+D:\AdvoDesk\advo-desk-backend\src\main\java\com\advo\desk\validator\EnrollmentValidator.java
+D:\AdvoDesk\advo-desk-backend\src\main\java\com\advo\desk\exception\GlobalExceptionHandler.java
+D:\AdvoDesk\advo-desk-backend\src\main\java\com\advo\desk\service\HearingService.java
+D:\AdvoDesk\advo-desk-backend\src\main\java\com\advo\desk\entity\Hearing.java
+D:\AdvoDesk\advo-desk-backend\src\main\java\com\advo\desk\util\PasswordHashGenerator.java
+D:\AdvoDesk\advo-desk-backend\src\main\java\com\advo\desk\dto\ClientDTO.java
+D:\AdvoDesk\advo-desk-backend\src\main\java\com\advo\desk\service\ClientService.java
