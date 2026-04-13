@@ -37,5 +37,9 @@ public class ClientDTO {
     @Pattern(regexp = "^[0-9]{6}$", message = "Pincode must be 6 digits")
     private String pincode;
 
+    private String profilePhotoPath;
+    private String aadharDocumentPath;
+    private String panDocumentPath;
+
     private Long createdBy;
 }

@@ -11,8 +11,14 @@ const ClientRegistration = () => {
     email: "",
     fullName: "",
     phone: "",
-    aadharNumber: "",
+    address: "",
+    city: "",
+    state: "",
+    pincode: "",
     role: ROLES.CLIENT,
+    profilePhoto: null,
+    aadharDocument: null,
+    panDocument: null,
   });
 
   const [error, setError] = useState("");
@@ -29,6 +35,21 @@ const ClientRegistration = () => {
     setFormData({
       ...formData,
       [name]: value,
+    });
+
+    if (fieldErrors[name]) {
+      setFieldErrors({
+        ...fieldErrors,
+        [name]: "",
+      });
+    }
+  };
+
+  const handleFileChange = (e) => {
+    const { name, files } = e.target;
+    setFormData({
+      ...formData,
+      [name]: files?.[0] || null,
     });
 
     if (fieldErrors[name]) {
@@ -129,17 +150,88 @@ const ClientRegistration = () => {
               className="input-field"
               value={formData.phone}
               onChange={handleChange}
+              required
             />
 
             <input
               type="text"
-              name="aadharNumber"
-              placeholder="Aadhar Number"
+              name="address"
+              placeholder="Address"
               className="input-field"
-              value={formData.aadharNumber}
+              value={formData.address}
               onChange={handleChange}
               required
             />
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <input
+                type="text"
+                name="city"
+                placeholder="City"
+                className="input-field"
+                value={formData.city}
+                onChange={handleChange}
+                required
+              />
+              <input
+                type="text"
+                name="state"
+                placeholder="State"
+                className="input-field"
+                value={formData.state}
+                onChange={handleChange}
+                required
+              />
+            </div>
+
+            <input
+              type="text"
+              name="pincode"
+              placeholder="Pincode"
+              className="input-field"
+              value={formData.pincode}
+              onChange={handleChange}
+              required
+            />
+
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-2">
+                Upload Profile Photo
+              </label>
+              <input
+                type="file"
+                name="profilePhoto"
+                accept="image/*"
+                className="file-input"
+                onChange={handleFileChange}
+              />
+            </div>
+
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-2">
+                Upload Aadhar Document
+              </label>
+              <input
+                type="file"
+                name="aadharDocument"
+                accept="application/pdf,image/*"
+                className="file-input"
+                onChange={handleFileChange}
+              />
+            </div>
+
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-2">
+                Upload PAN Document
+              </label>
+              <input
+                type="file"
+                name="panDocument"
+                accept="application/pdf,image/*"
+                className="file-input"
+                onChange={handleFileChange}
+              />
+            </div>
 
             <input
               type="password"

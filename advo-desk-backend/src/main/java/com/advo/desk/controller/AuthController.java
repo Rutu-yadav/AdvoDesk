@@ -39,8 +39,15 @@ public class AuthController {
             @RequestParam("fullName") String fullName,
             @RequestParam("role") String role,
             @RequestParam(value = "phone", required = false) String phone,
+            @RequestParam(value = "address", required = false) String address,
+            @RequestParam(value = "city", required = false) String city,
+            @RequestParam(value = "state", required = false) String state,
+            @RequestParam(value = "pincode", required = false) String pincode,
             @RequestParam(value = "enrollmentNumber", required = false) String enrollmentNumber,
-            @RequestParam(value = "enrollmentDocument", required = false) MultipartFile enrollmentDocument) {
+            @RequestParam(value = "enrollmentDocument", required = false) MultipartFile enrollmentDocument,
+            @RequestParam(value = "profilePhoto", required = false) MultipartFile profilePhoto,
+            @RequestParam(value = "aadharDocument", required = false) MultipartFile aadharDocument,
+            @RequestParam(value = "panDocument", required = false) MultipartFile panDocument) {
 
         // Create register request
         RegisterRequest request = new RegisterRequest();
@@ -50,10 +57,15 @@ public class AuthController {
         request.setFullName(fullName);
         request.setRole(RegisterRequest.Role.valueOf(role));
         request.setPhone(phone);
+        request.setAddress(address);
+        request.setCity(city);
+        request.setState(state);
+        request.setPincode(pincode);
         request.setEnrollmentNumber(enrollmentNumber);
 
-        // Register user with document if provided
-        Object registeredUser = authService.register(request, enrollmentDocument);
+        // Register user with documents if provided
+        Object registeredUser = authService.register(request, enrollmentDocument, profilePhoto, aadharDocument,
+                panDocument);
 
         Map<String, Object> response = new HashMap<>();
 

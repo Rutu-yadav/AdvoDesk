@@ -5,9 +5,11 @@ import com.advo.desk.dto.LoginResponse;
 import com.advo.desk.dto.RegisterRequest;
 import com.advo.desk.entity.Admin;
 import com.advo.desk.entity.Advocate;
+import com.advo.desk.entity.Client;
 import com.advo.desk.model.VerificationStatus;
 import com.advo.desk.repository.AdminRepository;
 import com.advo.desk.repository.AdvocateRepository;
+import com.advo.desk.repository.ClientRepository;
 import com.advo.desk.repository.UserRepository;
 import com.advo.desk.security.JwtUtil;
 import com.advo.desk.validator.EnrollmentValidator;
@@ -44,13 +46,17 @@ public class AuthService {
     private UserRepository userRepository;
 
     @Autowired
+    private ClientRepository clientRepository;
+
+    @Autowired
     private FileUploadService fileUploadService;
 
     /**
      * Register a new user - routes to appropriate table based on role
-     * Only ADMIN and ADVOCATE roles supported
      */
-    public Object register(RegisterRequest request, MultipartFile enrollmentDocument) {
+    public Object register(RegisterRequest request, MultipartFile enrollmentDocument,
+            MultipartFile profilePhoto, MultipartFile aadharDocument,
+            MultipartFile panDocument) {
         String role = request.getRole().name();
 
         switch (role) {
@@ -58,6 +64,8 @@ public class AuthService {
                 return registerAdmin(request);
             case "ADVOCATE":
                 return registerAdvocate(request, enrollmentDocument);
+            case "CLIENT":
+                return registerClient(request, profilePhoto, aadharDocument, panDocument);
             default:
                 throw new RuntimeException("Invalid role: " + role);
         }
@@ -141,9 +149,56 @@ public class AuthService {
         }
     }
 
+    private Client registerClient(RegisterRequest request, MultipartFile profilePhoto,
+            MultipartFile aadharDocument, MultipartFile panDocument) {
+        if (userRepository.existsByUsername(request.getUsername())) {
+            throw new RuntimeException("Username already exists");
+        }
+
+        if (userRepository.findAll().stream().anyMatch(user -> user.getEmail().equalsIgnoreCase(request.getEmail()))) {
+            throw new RuntimeException("Email already exists");
+        }
+
+        com.advo.desk.entity.User newUser = new com.advo.desk.entity.User();
+        newUser.setUsername(request.getUsername());
+        newUser.setPassword(request.getPassword());
+        newUser.setEmail(request.getEmail());
+        newUser.setFullName(request.getFullName());
+        newUser.setPhone(request.getPhone());
+        newUser.setRole(com.advo.desk.entity.User.Role.CLIENT);
+        com.advo.desk.entity.User savedUser = userRepository.save(newUser);
+
+        Client client = new Client();
+        client.setFullName(request.getFullName());
+        client.setEmail(request.getEmail());
+        client.setPhone(request.getPhone());
+        client.setAddress(request.getAddress());
+        client.setCity(request.getCity());
+        client.setState(request.getState());
+        client.setPincode(request.getPincode());
+
+        try {
+            if (profilePhoto != null && !profilePhoto.isEmpty()) {
+                client.setProfilePhotoPath(
+                        fileUploadService.uploadFile(profilePhoto, savedUser.getId(), "client-photos"));
+            }
+            if (aadharDocument != null && !aadharDocument.isEmpty()) {
+                client.setAadharDocumentPath(
+                        fileUploadService.uploadFile(aadharDocument, savedUser.getId(), "client-documents/aadhar"));
+            }
+            if (panDocument != null && !panDocument.isEmpty()) {
+                client.setPanDocumentPath(
+                        fileUploadService.uploadFile(panDocument, savedUser.getId(), "client-documents/pan"));
+            }
+        } catch (IOException e) {
+            throw new RuntimeException("Failed to upload client documents: " + e.getMessage());
+        }
+
+        return clientRepository.save(client);
+    }
+
     /**
-     * Authenticate user - checks admin and advocate tables only
-     * No verification workflow - advocates can login immediately after registration
+     * Authenticate user - checks admin, advocate and client user tables
      */
     public LoginResponse login(LoginRequest request) {
         String username = request.getUsername();
@@ -177,12 +232,21 @@ public class AuthService {
             }
 
             if (password.equals(advocate.getPassword())) {
-                // Find the corresponding user ID from users table
                 var userOpt = userRepository.findByUsername(username);
                 Long userId = userOpt.isPresent() ? userOpt.get().getId() : advocate.getId();
 
                 return createLoginResponse(userId, advocate.getUsername(), advocate.getEmail(),
                         advocate.getFullName(), "ADVOCATE");
+            }
+        }
+
+        // Try normal user (client)
+        var userOpt = userRepository.findByUsername(username);
+        if (userOpt.isPresent()) {
+            var user = userOpt.get();
+            if (password.equals(user.getPassword())) {
+                return createLoginResponse(user.getId(), user.getUsername(), user.getEmail(),
+                        user.getFullName(), user.getRole().name());
             }
         }
 

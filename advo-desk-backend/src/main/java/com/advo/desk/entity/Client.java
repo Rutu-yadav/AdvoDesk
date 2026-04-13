@@ -44,6 +44,15 @@ public class Client {
     @Column(length = 10)
     private String pincode;
 
+    @Column(name = "profile_photo_path", length = 500)
+    private String profilePhotoPath;
+
+    @Column(name = "aadhar_document_path", length = 500)
+    private String aadharDocumentPath;
+
+    @Column(name = "pan_document_path", length = 500)
+    private String panDocumentPath;
+
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "created_by")
     private User createdBy;

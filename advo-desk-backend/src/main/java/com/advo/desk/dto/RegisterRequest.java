@@ -10,7 +10,7 @@ import lombok.NoArgsConstructor;
 
 /**
  * DTO for user registration
- * Only supports ADMIN and ADVOCATE roles
+ * Supports ADMIN, ADVOCATE and CLIENT roles
  */
 @Data
 @NoArgsConstructor
@@ -18,7 +18,9 @@ import lombok.NoArgsConstructor;
 public class RegisterRequest {
 
     public enum Role {
-        ADMIN, ADVOCATE
+        ADMIN,
+        ADVOCATE,
+        CLIENT
     }
 
     @NotBlank(message = "Username is required")
@@ -41,4 +43,10 @@ public class RegisterRequest {
 
     private String phone;
     private String enrollmentNumber; // Required for ADVOCATE role
+
+    // Client-specific fields
+    private String address;
+    private String city;
+    private String state;
+    private String pincode;
 }

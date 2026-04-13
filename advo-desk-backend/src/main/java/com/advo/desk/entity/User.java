@@ -75,10 +75,10 @@ public class User {
 
     /**
      * Enum for user roles
-     * Only ADMIN and ADVOCATE supported
      */
     public enum Role {
         ADMIN,
-        ADVOCATE
+        ADVOCATE,
+        CLIENT
     }
 }
